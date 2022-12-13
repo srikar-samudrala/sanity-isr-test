@@ -18,6 +18,7 @@ export async function getStaticProps() {
   return {
     props: {
       animals: animals.result,
+      revalidate: 30
     },
   };
 }
