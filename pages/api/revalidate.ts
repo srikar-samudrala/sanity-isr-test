@@ -13,6 +13,7 @@ export default async function handler(
     return;
   }
   try {
+    fetch('http://localhost:3000/api/hello');
     await res.revalidate(`${req.body.path}`);
     res.json({ revalidated: true });
   } catch (err) {
