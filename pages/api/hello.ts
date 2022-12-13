@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
+import path from 'path';
 
 type Data =
   | {
@@ -30,7 +31,9 @@ export default async function handler(
   </sitemap>
   </sitemapindex>`;
 
-    fs.writeFileSync('./public/sitemap.xml', sitemapContent);
+    const filePath = path.resolve(process.cwd(), 'public', 'sitemap.xml');
+
+    fs.writeFileSync(filePath, sitemapContent);
     res.status(200).json({ updated: true });
   } catch (error: any) {
     res.status(500).json({ error: (error as Error).message });
