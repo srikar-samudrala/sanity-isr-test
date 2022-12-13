@@ -1,0 +1,5 @@
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+  <loc>https://s3.coto.com/careers/sitemap.xml/${str || 'hello'}</loc>
+  </sitemap>
+  </sitemapindex>
