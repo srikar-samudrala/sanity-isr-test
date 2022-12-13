@@ -6,6 +6,7 @@ export const getServerSideProps = async ({ res }: any) => {
   </sitemapindex>`;
 
   res.setHeader('Content-Type', 'text/xml');
+  res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=1200')
   res.write(sitemapContent);
 
   res.end();
