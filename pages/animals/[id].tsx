@@ -12,15 +12,15 @@ export async function getStaticProps({ params }: any) {
   if (animal.result.length === 0) {
     return {
       notFound: true,
-      revalidate: 30
+      revalidate: 30,
     };
   }
 
   return {
     props: {
       animal,
-      revalidate: 30
     },
+    revalidate: 30,
   };
 }
 
