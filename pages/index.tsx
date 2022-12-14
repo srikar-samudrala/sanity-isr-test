@@ -26,7 +26,7 @@ const Home: NextPage = ({ data }: any) => {
           })}
         </ul>
       </div>
-      <div>
+      <div style={{ marginBottom: '48px' }}>
         <h2>{data.careerLandingCoreValues.heading}</h2>
         <p>{data.careerLandingCoreValues.description}</p>
         <h3>Core Values:</h3>
