@@ -7,6 +7,7 @@ type Data = {
 const idRouteMap: { [type: string]: string[] } = {
   '/': ['careerLanding', 'videos'],
   '/openings': ['jobListing', 'jobDetail', 'department'],
+  detail: ['jobDetail', 'aboutCoto', 'jobBenefits', 'howToApply'],
 };
 
 export default async function handler(
@@ -19,12 +20,14 @@ export default async function handler(
   }
   try {
     const { _id: id, _type: type }: { _id: string; _type: string } = req.body;
-
+    console.log(`Sanity webhook payload, id: ${id}, type: ${type}`);
     const entries = Object.entries(idRouteMap);
 
     for (const entry of entries) {
       if (entry[1].includes(type)) {
+        console.log(`Invalidating ${entry[0]}...`);
         await res.revalidate(entry[0]);
+        console.log(`Invalidated  ${entry[0]}!`);
       }
     }
 
