@@ -58,6 +58,10 @@ export async function getStaticProps() {
     )}`
   ).then((res) => res.json());
 
+  console.log(
+    `Changed video name: ${data.result[0].careerLandingVideo.videoName}`
+  );
+
   return {
     props: {
       data: data.result[0],
