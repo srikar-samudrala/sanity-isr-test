@@ -10,6 +10,10 @@ const idRouteMap: { [type: string]: string[] } = {
   detail: ['jobDetail', 'aboutCoto', 'jobBenefits', 'howToApply'],
 };
 
+function delay() {
+  return new Promise((res) => setTimeout(() => res(''), 1500));
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -26,10 +30,9 @@ export default async function handler(
     for (const entry of entries) {
       if (entry[1].includes(type)) {
         console.log(`Invalidating ${entry[0]}...`);
-        setTimeout(() => {
-          res.revalidate(entry[0]);
-          console.log(`Invalidated  ${entry[0]}!`);
-        }, 5);
+        await delay();
+        await res.revalidate(entry[0]);
+        console.log(`Invalidated  ${entry[0]}!`);
       }
     }
 
