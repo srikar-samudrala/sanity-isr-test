@@ -26,8 +26,10 @@ export default async function handler(
     for (const entry of entries) {
       if (entry[1].includes(type)) {
         console.log(`Invalidating ${entry[0]}...`);
-        await res.revalidate(entry[0]);
-        console.log(`Invalidated  ${entry[0]}!`);
+        setTimeout(() => {
+          res.revalidate(entry[0]);
+          console.log(`Invalidated  ${entry[0]}!`);
+        }, 5);
       }
     }
 
