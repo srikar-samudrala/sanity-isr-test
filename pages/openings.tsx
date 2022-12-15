@@ -64,12 +64,12 @@ export async function getStaticProps() {
     "departmentName": title
   }`;
   let jobOpeningsData = fetch(
-    `https://e7vk8w4f.apicdn.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
+    `https://e7vk8w4f.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
       jobOpeningsquery
     )}`
   ).then((res) => res.json());
   let departmentsData = fetch(
-    `https://e7vk8w4f.apicdn.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
+    `https://e7vk8w4f.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
       departmentsQuery
     )}`
   ).then((res) => res.json());

@@ -53,7 +53,7 @@ export async function getStaticProps() {
     careerLandingBenefits,
   }`;
   const data = await fetch(
-    `https://e7vk8w4f.apicdn.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
+    `https://e7vk8w4f.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
       query
     )}`
   ).then((res) => res.json());

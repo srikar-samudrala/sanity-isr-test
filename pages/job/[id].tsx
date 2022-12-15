@@ -30,7 +30,7 @@ export async function getStaticProps({ params }: any) {
     widgets[]->
   }`;
   const jobDetailData = await fetch(
-    `https://e7vk8w4f.apicdn.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
+    `https://e7vk8w4f.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
       jobDetailQuery
     )}`
   ).then((res) => res.json());
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
   }`;
 
   const jobListData = await fetch(
-    `https://e7vk8w4f.apicdn.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
+    `https://e7vk8w4f.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent(
       jobListQuery
     )}`
   ).then((res) => res.json());
